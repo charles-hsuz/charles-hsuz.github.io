@@ -1,0 +1,474 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>CharlesHsu's Blogggggggggg! - 汇编不会遍!一个BugDe一天!</title><meta name="author" content="Charles Hsu"><meta name="copyright" content="Charles Hsu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="菜鸡的菜鸡博客 o(╥﹏╥)o">
+<meta property="og:type" content="website">
+<meta property="og:title" content="CharlesHsu&#39;s Blogggggggggg!">
+<meta property="og:url" content="https://www.crowhsu.top/page/3/index.html">
+<meta property="og:site_name" content="CharlesHsu&#39;s Blogggggggggg!">
+<meta property="og:description" content="菜鸡的菜鸡博客 o(╥﹏╥)o">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.crowhsu.top/img/head.png">
+<meta property="article:author" content="Charles Hsu">
+<meta property="article:tag" content="个人博客,定期更新,技术分享,软件,编程">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.crowhsu.top/img/head.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://www.crowhsu.top/page/3/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="baidu-site-verification" content="code-MU7vLj89Yt"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?61512693c3800dbee03e30304a696565";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-252619135-1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-252619135-1');
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: {"appId":"7TYBJW4YH1","apiKey":"32dc538bbb53ee0e7d1f230f3a839939","indexName":"my-blog","hits":{"per_page":8},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容：${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: {"limitDay":180,"position":"top","messagePrev":"已经","messageNext":"天没有更新了, 文章内容可能已经过时, 注意分辨."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'mediumZoom',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#FF979D","bgDark":"#1f1f1f","position":"top-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'CharlesHsu\'s Blogggggggggg!',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-01-19 20:54:17'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/js-heo@1.0.11/bb/showbb_in_index.css"><style type="text/css">.app-refresh{position:fixed;top:-2.2rem;left:0;right:0;z-index:99999;padding:0 1rem;font-size:15px;height:2.2rem;transition:all .3s ease}.app-refresh-wrap{display:flex;color:#fff;height:100%;align-items:center;justify-content:center}.app-refresh-wrap a{color:#fff;text-decoration:underline;cursor:pointer}</style><link rel="stylesheet" href="/css/foot.css"><script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script><script>LA.init({id:"JuyNJsAIUtkimZA8",ck:"JuyNJsAIUtkimZA8"})</script><link rel="stylesheet" href="/css/mouse.css"><link rel="stylesheet" href="/css/custom.css"><link rel="stylesheet" href="/css/rightmenu.css"><link rel="apple-touch-icon" href="/img/favicon.png"><meta name="apple-mobile-web-app-title" content="枢衡Hsu"><link rel="bookmark" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" sizes="180x180" href="/apple-touch-icon.png" ><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/head.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">75</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/bb/"><i class="fa-fw fa-solid fa-compass"></i><span> 个人动态</span></a></li><li><a class="site-page child" href="/tools/"><i class="fa-fw fa-solid fa-toolbox"></i><span> 小工具</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('/img/banner.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">CharlesHsu's Blogggggggggg!</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/bb/"><i class="fa-fw fa-solid fa-compass"></i><span> 个人动态</span></a></li><li><a class="site-page child" href="/tools/"><i class="fa-fw fa-solid fa-toolbox"></i><span> 小工具</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">CharlesHsu's Blogggggggggg!</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/charles-hsuz" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:charles_hsu@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover right"><a href="/bb/" title="个人动态"><img class="post_bg" src="https://picbed-1304952903.cos.ap-beijing.myqcloud.com/pic/about/head.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="个人动态"></a></div><div class="recent-post-info"><a class="article-title" href="/bb/" title="个人动态">个人动态</a><div class="article-meta-wrap"><span class="article-meta"><i class="fas fa-thumbtack sticky"></i><span class="sticky">置顶</span></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox">个人动态</i></span></div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/posts/5f82cc62.html" title="【综合】简单加解密——寻找序列号"><img class="post_bg" src="/img/default_cover/cover9.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【综合】简单加解密——寻找序列号"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/5f82cc62.html" title="【综合】简单加解密——寻找序列号">【综合】简单加解密——寻找序列号</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2022-12-23T20:24:02.897Z" title="更新于 2022-12-24 04:24:02">2022-12-24</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/">刷题笔记</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/posts/5f82cc62.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">【综合】简单加解密——寻找序列号
+下面文字对你可能有用(复制+粘贴):123456789101112#include &lt;stdlib.h&gt;#include &lt;string.h&gt;#include &quot;malloc.h&quot;#define MaxPass 66 // 最多66段密文#define NumbPwdTable 5 // 密码表的份数#define SizePwdTable 0x210 // 每份密码表占用字节数struct PassStru // 密码表结构: 编移(4字节),密文长度(2字节),钥匙(1字节)。 结构体长度此处须为 4的倍数 &#123;unsigned int Offset; unsigned short int Size; unsigned char Key; char cJiangYou;&#125; // cJiangYou打酱油char MsgErr[]=&quot;Wrong Key!&quot;,MsgSn[]=&quot;Serial No.: &quot;,MsgMD9[]=&quot;MD9: &quo ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/5487c88e.html" title="【综合】随机数——智慧+手气"><img class="post_bg" src="/img/default_cover/cover7.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【综合】随机数——智慧+手气"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/5487c88e.html" title="【综合】随机数——智慧+手气">【综合】随机数——智慧+手气</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2022-12-23T20:24:02.894Z" title="更新于 2022-12-24 04:24:02">2022-12-24</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/">刷题笔记</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/posts/5487c88e.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">【综合】随机数——智慧+手气当然这道题可以用随机数碰运气，没关系，但是这里不提供这种解法了因为答案是固定的，所以可以通过一个外部文件记录程序运行次数
+代码查看
+    123456789101112131415161718#include &lt;stdio.h&gt;#include &lt;string.h&gt;int main()&#123;	getchar();    FILE *file = fopen(&quot;pp.txt&quot;, &quot;a&quot;);    char name[] = &quot;*&quot;;    fputs(name, file);    fclose(file);    FILE *fi = fopen(&quot;pp.txt&quot;,&quot;r&quot;);    char buf[1024] = &#123;0&#125;;    fgets(buf, 1024, fi);    int len = strlen(buf);    printf(&quot;%d\n&quot;,len%2==0?2019:2 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/posts/81d10c29.html" title="【小学】招生——统计适龄儿童数据"><img class="post_bg" src="/img/default_cover/cover2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【小学】招生——统计适龄儿童数据"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/81d10c29.html" title="【小学】招生——统计适龄儿童数据">【小学】招生——统计适龄儿童数据</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2022-12-23T20:24:02.876Z" title="更新于 2022-12-24 04:24:02">2022-12-24</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/">刷题笔记</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/posts/81d10c29.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">【小学】招生——统计适龄儿童数据
+C代码123456789101112131415161718192021#include &lt;stdio.h&gt;struct stu&#123;	int bir[3];	char sex,name[9];&#125;children[185];int OK(int y,int m,int d)&#123;	if(y != 2013) return y &lt; 2013;	if(m != 9) return m &lt; 9;	return d == 1;&#125;int main()&#123;	int list[180] = &#123;0&#125;,num;	for(int i = 0;i &lt; 180;i++)&#123;		scanf(&quot;%d,&quot;,&amp;num);		scanf(&quot;%d-%d-%d,%c,%s&quot;,&amp;children[num].bir[0],&amp;children[num].bir[1],&amp;children[num].bir[2],&amp;chil ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/ef225e31.html" title="【日期】找找哪些日期是星期几"><img class="post_bg" src="/img/default_cover/cover8.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【日期】找找哪些日期是星期几"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/ef225e31.html" title="【日期】找找哪些日期是星期几">【日期】找找哪些日期是星期几</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2022-12-23T20:24:02.878Z" title="更新于 2022-12-24 04:24:02">2022-12-24</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/">刷题笔记</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/posts/ef225e31.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">【日期】找找哪些日期是星期几用到的都是之前讲过的，感兴趣的可以自己翻一翻，都在这个专栏里面了
+代码12345678910111213141516171819202122232425#include &lt;stdio.h&gt;int a[13]=&#123;0,31,28,31,30,31,30,31,31,30,31,30,31&#125;,i = 736330;int main()&#123;	int y,m,d,w,num=1;	scanf(&quot;%d-%d-%d\n%d&quot;,&amp;y,&amp;m,&amp;d,&amp;w);	int ind = d + (y - 1)*365+(y - 1)/4-(y - 1)/100+(y - 1)/400;	for(int i = 1;i &lt; m;i++) ind += a[i];	if(y &lt; 2017 || y &gt; 2018 || w &gt; 5 || w &lt; 1 || m &lt; 1 || m &gt; 12 || d &lt; 1 || d &gt; a[m]) printf(&q ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/posts/c39add7d.html" title="【综合】发帖顶你--汉字点阵字库操作"><img class="post_bg" src="/img/default_cover/cover3.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【综合】发帖顶你--汉字点阵字库操作"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/c39add7d.html" title="【综合】发帖顶你--汉字点阵字库操作">【综合】发帖顶你--汉字点阵字库操作</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2022-12-23T20:24:02.890Z" title="更新于 2022-12-24 04:24:02">2022-12-24</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/">刷题笔记</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/posts/c39add7d.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">【综合】发帖顶你—汉字点阵字库操作其实到不是我不想写后面几道题，主要是确实没啥好写的，就真的只是体量大而已，就不写思路了，按照题目的意思模拟就行
+代码1234567891011121314151617181920212223#include &lt;stdio.h&gt;const int an[8] = &#123;128,64,32,16,8,4,2,1&#125;;int main()&#123;	unsigned int size,num1,num2;	char pos[20],fg,bg;	scanf(&quot;%d,%s\n%d,%c,%c&quot;,&amp;size,pos,&amp;num1,&amp;bg,&amp;fg);	num2 = num1 % 100 - 1 ,num1 = num1/100-16;	unsigned char cha[size][size/8];	FILE *fp = fopen(pos,&quot;rb&quot;);	fseek(fp,(94*num1+num2)*size*size/8,0);	fread(cha,size*si ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/a3266abe.html" title="【日期】车辆限行"><img class="post_bg" src="/img/default_cover/cover7.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【日期】车辆限行"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/a3266abe.html" title="【日期】车辆限行">【日期】车辆限行</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2022-12-23T20:24:02.884Z" title="更新于 2022-12-24 04:24:02">2022-12-24</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/">刷题笔记</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/posts/a3266abe.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">【日期】车辆限行 2012年4月1日，北京是人民政府根据《中华人民共和国道路交通安全法》和《北京市实施〈中华人民共和国大气污染防 治法〉办法》有关规定，自2012年4月11日起，继续对机动车实施按车牌尾号工作日高峰时段 区域限行交通管理措施。　　根据规定，按车牌尾号限行的机动车车牌尾号分为五组，每13周轮换一次限行日，分别为：(1) 自2012年4月9日至2012年7月7日：3和8、4和9、5和0、1和6、2和7(2) 自2012年7月8日至2012年10月6日：2和7、3和8、4和9、5和0、1和6(3) 自2012年10月7日至2013年1月5日：1和6、2和7、3和8、4和9、5和0(4) 自2013年1月6日至2013年4月10日：5和0、1和6、2和7、3和8、4和9(星期一到星期五)现给出 2012 年 4 月 9 日之后的任意日期，如果不考虑国家统一的公假，只考虑日期一个因素，请计算指定日期要限行的车牌尾号。
+（政府的公告确实有点意思，在时间衔接上和限号安排上公告（http://unn.people.com.cn/GB/14748/17574443.html）与公告（ht ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/posts/1d63791b.html" title="精工书院2022级-C语言编程机考模拟练习课堂"><img class="post_bg" src="/img/default_cover/cover6.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="精工书院2022级-C语言编程机考模拟练习课堂"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/1d63791b.html" title="精工书院2022级-C语言编程机考模拟练习课堂">精工书院2022级-C语言编程机考模拟练习课堂</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2022-12-23T20:24:02.899Z" title="更新于 2022-12-24 04:24:02">2022-12-24</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/">刷题笔记</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/posts/1d63791b.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">精工书院2022级-C语言编程机考模拟练习课堂好吧虽然我说不写，但最后还是写了可怜可怜孩子，点个赞吧，往年这种文章可都是收费的(手动滑稽)
+【机考模拟01】输出字符图形编写程序，从键盘输入一个n和字符，然后用输入的字符，输出相应图形。例如：12345678910111213     输入：5,#&lt;回车&gt;     输出：    #####&lt;回车&gt;   #####&lt;回车&gt;  #####&lt;回车&gt; #####&lt;回车&gt;#####&lt;回车&gt;1234567891011121314#include &lt;stdio.h&gt;int main()&#123;	int n;	char x;	scanf(&quot;%d,%c&quot;,&amp;n,&amp;x);	for(int i = 0; i &lt; n; i ++)	&#123;		for(int j = 1; j &lt; n - i; j ++) printf(&quot; &quot;);		for(int j = 0; j &lt; n; j ++) putch ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/909735e5.html" title="SIM2022-精工书院2022级乐学机考模拟试卷"><img class="post_bg" src="/img/default_cover/cover1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SIM2022-精工书院2022级乐学机考模拟试卷"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/909735e5.html" title="SIM2022-精工书院2022级乐学机考模拟试卷">SIM2022-精工书院2022级乐学机考模拟试卷</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2022-12-23T20:24:02.866Z" title="更新于 2022-12-24 04:24:02">2022-12-24</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/">刷题笔记</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/posts/909735e5.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">出了这六道题还有十道题，但是这六道模拟题的难度明显更高，所以我就不更新那10道题了 
+【机考01】【三】角图形输出，20分编写程序，从键盘输入 n ( 0 &lt; n &lt; 27 )，输出下面（ n = 5 时 ）所示的高度为 n 行的三角形图形（行尾没有空格）。123456789        A      B B B    C C C C C  D D D D D D DE E E E E E E E E输入：三角形图形的行数 (不用校验)
+输出：
+相应的三角形图形（行尾没有空格）
+ 1234567891011121314151617#include &lt;stdio.h&gt;int main()&#123;	int n,i;	char a=&#x27;A&#x27;,s[]=&quot;                                                                                          &quot;;	scanf(&quot;%d&quot;,&amp;n);	for(i=1;i&lt;n+1 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/posts/5f6267a3.html" title="【精度】科学记数法"><img class="post_bg" src="/img/default_cover/cover4.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【精度】科学记数法"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/5f6267a3.html" title="【精度】科学记数法">【精度】科学记数法</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2022-12-23T20:24:02.888Z" title="更新于 2022-12-24 04:24:02">2022-12-24</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/">刷题笔记</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/posts/5f6267a3.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">【精度】科学记数法对于非常大或者非常小的数据，我们通常用科学记数法来表示。例如在科技文献和电脑中经常遇到的 2.3×106 （计算机中的科学记数法表示为：2.3E6），或者 9.18×10-5 （科学记树法表示：9.18E-5）这种类型的数据。
+输入：用科学记数法表示的数据。即为符合C语言表示的科学记数法表示。
+输出：  该数据的双精度表示
+说明： 输入数据的精度不高于小数点后50位。 输入数据时，在实数和幂之间有空格进行分隔，空格个数不定。 结果保留到小数点后8位，如不足8位用0补足，超过8位则截断，不进行四舍五入的处理。
+样例：
+
+
+
+序号
+测试输入
+期待的输出
+额外进程
+
+
+
+
+1
+1.2345 E 3↵
+1234.50000000↵
+0
+
+
+2
+1.2345 e-3↵
+0.00123450↵
+0
+
+
+3
+2.23456789123456789123456789 e 20↵
+223456789123456789123.45678900↵
+0
+
+
+4
+1 E 0↵
+1.00000000↵
+0
+
+
+5
+2.2345678901234567890 E 1↵
+22.34567890↵
+0 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/418342b5.html" title="【字符】压缩文本文件"><img class="post_bg" src="/img/default_cover/cover3.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【字符】压缩文本文件"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/418342b5.html" title="【字符】压缩文本文件">【字符】压缩文本文件</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2022-12-23T20:24:02.872Z" title="更新于 2022-12-24 04:24:02">2022-12-24</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/">刷题笔记</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a class="twikoo-count" href="/posts/418342b5.html#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">【字符】压缩文本文件==如果感觉我的文章对您有帮助的话，请不要吝啬您的点赞哦awa==
+压缩是一种有效的减小数据量的方法，目前已经被广泛应用于各种类型的信息系统之中。一种压缩文本文件（假设文件中不包含数字）的方法如下：
+
+原始文本文件中的非字母的字符，直接拷贝到压缩文件中；
+原始文件中的词（全部由字母组成），如果是第一次出现，则将该词加入到一个词的列表中，并拷贝到压缩文件中；否则该词不拷贝到压缩文件中，而是将该词在词的列表中的位置拷贝到压缩文件中。
+词的列表的起始位置为 1 。 词的定义为文本中由大小写字母组成的最大序列。大写字母和小写字母认为是不同的字母，即 abc 和 Abc 是不同的词。词的例子如下： x-ray 包括两个词 x 和 ray；mary’s 包括两个词 mary 和 s；a c-Dec 包括三个词 a 和 c 和 Dec 编写一个程序，输入为一组字符串，输出为压缩后的文本。
+
+输入：输入为一段文本，可以假设输入中不会出现数字、每行的长度不会超过 80 个字符，并且输入文本的大小不会超过 10M。
+输出： 压缩后的文本。
+样例：
+
+
+
+序号
+测试输入
+期待的输出
+额外 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/2/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#content-inner">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/#content-inner">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/#content-inner">8</a><a class="extend next" rel="next" href="/page/4/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/head.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Charles Hsu</div><div class="author-info__description">菜鸡的菜鸡博客 o(╥﹏╥)o</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">75</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/charles-hsuz"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/charles-hsuz" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:charles_hsu@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">随缘更新ing ~</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/7e751aa7.html" title="岁幕夜省"><img src="/img/default_cover/cover4.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="岁幕夜省"/></a><div class="content"><a class="title" href="/posts/7e751aa7.html" title="岁幕夜省">岁幕夜省</a><time datetime="2023-01-17T18:50:54.000Z" title="发表于 2023-01-18 02:50:54">2023-01-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/cbadfe7e.html" title="关于spawnfailed"><img src="/img/default_cover/cover7.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="关于spawnfailed"/></a><div class="content"><a class="title" href="/posts/cbadfe7e.html" title="关于spawnfailed">关于spawnfailed</a><time datetime="2023-01-16T17:57:20.000Z" title="发表于 2023-01-17 01:57:20">2023-01-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/16518a5d.html" title="单调栈"><img src="/img/default_cover/cover5.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="单调栈"/></a><div class="content"><a class="title" href="/posts/16518a5d.html" title="单调栈">单调栈</a><time datetime="2023-01-13T08:45:51.000Z" title="发表于 2023-01-13 16:45:51">2023-01-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/f216fabe.html" title="最短路"><img src="/img/default_cover/cover3.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="最短路"/></a><div class="content"><a class="title" href="/posts/f216fabe.html" title="最短路">最短路</a><time datetime="2023-01-11T08:01:52.000Z" title="发表于 2023-01-11 16:01:52">2023-01-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/751ac048.html" title="拓扑序列"><img src="/img/default_cover/cover4.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="拓扑序列"/></a><div class="content"><a class="title" href="/posts/751ac048.html" title="拓扑序列">拓扑序列</a><time datetime="2023-01-10T07:21:13.000Z" title="发表于 2023-01-10 15:21:13">2023-01-10</time></div></div></div></div><div class="card-widget" id="card-newest-comments"><div class="item-headline"><i class="fas fa-comment-dots"></i><span>最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/help/"><span class="card-category-list-name">help</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/"><span class="card-category-list-name">刷题笔记</span><span class="card-category-list-count">55</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%8A%80%E5%B7%A7/"><span class="card-category-list-name">技巧</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%95%99%E7%A8%8B/"><span class="card-category-list-name">教程</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%9D%82%E8%B0%88/"><span class="card-category-list-name">杂谈</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%AE%97%E6%B3%95%E6%95%99%E7%A8%8B/"><span class="card-category-list-name">算法教程</span><span class="card-category-list-count">9</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%AF%AD%E6%B3%95%E6%95%99%E7%A8%8B/"><span class="card-category-list-name">语法教程</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/"><span class="card-category-list-name">软件分享</span><span class="card-category-list-count">3</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/ACM-%E9%9B%86%E8%AE%AD/" style="font-size: 1.1em; color: #999">ACM,集训</a> <a href="/tags/STL/" style="font-size: 1.1em; color: #999">STL</a> <a href="/tags/USACO/" style="font-size: 1.1em; color: #999">USACO</a> <a href="/tags/hexo-github/" style="font-size: 1.1em; color: #999">hexo,github</a> <a href="/tags/tool/" style="font-size: 1.3em; color: #99a1ac">tool</a> <a href="/tags/%E4%B9%90%E5%AD%A6/" style="font-size: 1.5em; color: #99a9bf">乐学</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 1.1em; color: #999">算法</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" style="font-size: 1.1em; color: #999">计算机基础</a> <a href="/tags/%E8%B5%84%E6%BA%90/" style="font-size: 1.1em; color: #999">资源</a> <a href="/tags/%E8%BD%AC%E8%BD%BD/" style="font-size: 1.1em; color: #999">转载</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/01/"><span class="card-archive-list-date">一月 2023</span><span class="card-archive-list-count">13</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/12/"><span class="card-archive-list-date">十二月 2022</span><span class="card-archive-list-count">62</span></a></li></ul></div></div></div></main><footer id="footer"><div id="footer_deal"><a class="deal_link" href="mailto:charles_hsu@qq.com" title="mail"><i class="iconfont icon-youxiang"></i></a><a class="deal_link" href="tencent://Message/?Uin=1191393280&amp;websiteName=q-zone.qq.com&amp;Menu=yes" title="qq" target="_blank"><i class="iconfont icon-QQ-circle-fill"></i></a><img class="footer_mini_logo entered loading" style="border-radius:50%" src="/img/uparrow.png" onclick="btf.scrollToDest(0,500)" title="返回顶部"/><a class="deal_link" href="https://blog.csdn.net/CharlesHsuu?type=blog" title="CSDN" target="_blank"><i class="iconfont icon-csdn"></i></a><a class="deal_link" href="https://github.com/charles-hsuz" title="github" target="_blank"><i class="iconfont icon-github"></i></a></div><div id="Jay-footer"><div class="footer-group"><h3 class="footer-title">直达</h3><div class="footer-links"><a class="footer-item" href="/" target="_blank">我的主页</a><a class="footer-item" href="/bb">个人动态</a><a class="footer-item" href="/random/index.html">随机文章</a></div></div><div class="footer-group"><h3 class="footer-title">分类</h3><div class="footer-links"><a class="footer-item" href="/categories/学习笔记/">学习笔记</a><a class="footer-item" href="/categories/算法教程/">算法教程</a><a class="footer-item" href="/categories/刷题笔记/">刷题笔记</a><a class="footer-item" href="/categories/语法教程/">语法教程</a><a class="footer-item" href="/categories/工具分享/">工具分享</a></div></div><div class="footer-group"><h3 class="footer-title">关于</h3><div class="footer-links"><a class="footer-item" href="/about">关于我</a><a class="footer-item" href="/charts">博客统计</a><a class="footer-item" href="/archives">文章归档</a></div></div><div class="footer-group"><h3 class="footer-title">友链</h3><div class="footer-links" id="friend-links-in-footer"><a class="footer-item" href="/link">在这里 ✨</a></div><div class="footer-links" id="friend-links-in-footer"><a class="footer-item" href="mailto:charles_hsu@qq.com">广告位招租啦</a></div></div><div class="footer-group"><h3 class="footer-title">协议</h3><div class="footer-links"><a class="footer-item" href="/privacy">隐私协议</a><a class="footer-item" href="/cookies">Cookie</a><a class="footer-item" href="/cc">版权协议</a></div></div></div><div id="footer-banner"><div class="footer-banner-links"><div class="footer-banner-left"><div class="footer-banner-left"><div id="footer-banner-tips"></div><script src="https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js"></script><script>var typed = new Typed("#footer-banner-tips", {
+  strings: ["念念不忘，必有回响。", "Never forget, there will be echoes.", "既然相信，那就前行。", "一杯枸杞一包烟，一个BUG修一天"],
+  startDelay: 200,
+  backDelay: 2000,
+  typeSpeed: 100,
+  loop: true,
+  backSpeed: 20
+})
+</script></div></div><div class="footer-banner-right"><a class="footer-banner-link" href="/404.html" title="RSS">订阅|</a><a class="footer-banner-link" href="/about" title="about">关于|</a><a class="footer-banner-link cc" href="/cc" title="cc协议"><i class="iconfont icon-cc"></i><span>协议</span></a></div></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="algolia-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="search-wrap"><div id="algolia-search-input"></div><hr/><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-info"><div class="algolia-stats"></div><div class="algolia-poweredBy"></div></div></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><a class="rightMenu-item" href="javascript:window.history.back();"><i class="fa-solid fa-chevron-left"></i></a><a class="rightMenu-item" href="javascript:window.history.forward();"><i class="fa-solid fa-chevron-right"></i></a><a class="rightMenu-item" href="javascript:window.location.reload();"><i class="fa-solid fa-reply"></i></a><a class="rightMenu-item" href="javascript:rmf.scrollToTop();"><i class="fa-solid fa-chevron-up"></i></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-text"><a class="rightMenu-item" href="javascript:rmf.copySelect();"><i class="fa-solid fa-clone"></i><span>复制</span></a></div><div class="rightMenu-group rightMenu-line"><a class="rightMenu-item" href="javascript:rmf.switchDarkMode();"><i class="fa-solid fa-circle-half-stroke"></i><span>昼夜切换</span></a><a class="rightMenu-item" href="javascript:rmf.switchReadMode();"><i class="fa-solid fa-book"></i><span>阅读模式</span></a></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="https://cdn.jsdelivr.net/npm/algoliasearch/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instantsearch.js/dist/instantsearch.production.min.js"></script><script src="/js/search/algolia.js"></script><div class="js-pjax"><script>(() => { 
+  const getCommentUrl = () => {
+    const eleGroup = document.querySelectorAll('#recent-posts .article-title')
+    let urlArray = []
+    eleGroup.forEach(i=>{
+      urlArray.push(i.getAttribute('href'))
+    })
+    return urlArray
+  }
+
+  const getCount = () => {
+    const runTwikoo = () => {
+      twikoo.getCommentsCount({
+        envId: 'my-blog-5gnya3pp48ae2717',
+        region: '',
+        urls: getCommentUrl(),
+        includeReply: false
+      }).then(function (res) {
+        document.querySelectorAll('#recent-posts .twikoo-count').forEach((item,index) => {
+          item.innerText = res[index].count
+        })
+      }).catch(function (err) {
+        console.log(err)
+      })
+    }
+
+      if (typeof twikoo === 'object') {
+        runTwikoo()
+      } else {
+        getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(runTwikoo)
+      }
+  }
+
+  window.pjax ? getCount() : window.addEventListener('load', getCount)
+
+})()</script><script>function subtitleType () {
+  if (true) { 
+    window.typed = new Typed("#subtitle", {
+      strings: ["今日事&#44;今日毕","人类既然侥幸获得了智慧 就理应珍惜","多希望每天能有48H"],
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50
+    })
+  } else {
+    document.getElementById("subtitle").innerHTML = '今日事&#44;今日毕'
+  }
+}
+
+if (true) {
+  if (typeof Typed === 'function') {
+    subtitleType()
+  } else {
+    getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js').then(subtitleType)
+  }
+} else {
+  subtitleType()
+}</script></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getComment = () => {
+    const runTwikoo = () => {
+      twikoo.getRecentComments({
+        envId: 'my-blog-5gnya3pp48ae2717',
+        region: '',
+        pageSize: 3,
+        includeReply: true
+      }).then(function (res) {
+        const twikooArray = res.map(e => {
+          return {
+            'content': changeContent(e.comment),
+            'avatar': e.avatar,
+            'nick': e.nick,
+            'url': e.url + '#' + e.id,
+            'date': new Date(e.created).toISOString()
+          }
+        })
+
+        saveToLocal.set('twikoo-newest-comments', JSON.stringify(twikooArray), 10/(60*24))
+        generateHtml(twikooArray)
+      }).catch(function (err) {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.innerHTML= "无法获取评论，请确认相关配置是否正确"
+      })
+    }
+
+    if (typeof twikoo === 'object') {
+      runTwikoo()
+    } else {
+      getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(runTwikoo)
+    }
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+        }
+        
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <div class='name'><span>${array[i].nick} / </span><time datetime="${array[i].date}">${btf.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom.innerHTML= result
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('twikoo-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><div class="app-refresh" id="app-refresh"> <div class="app-refresh-wrap"> <label>✨ 网站已更新最新版本 👉</label> <a href="javascript:void(0)" onclick="location.reload()">点击刷新</a> </div></div><script>function showNotification(){if(GLOBAL_CONFIG.Snackbar){var t="light"===document.documentElement.getAttribute("data-theme")?GLOBAL_CONFIG.Snackbar.bgLight:GLOBAL_CONFIG.Snackbar.bgDark,e=GLOBAL_CONFIG.Snackbar.position;Snackbar.show({text:"已更新最新版本",backgroundColor:t,duration:5e5,pos:e,actionText:"点击刷新",actionTextColor:"#fff",onActionClick:function(t){location.reload()}})}else{var o=`top: 0; background: ${"light"===document.documentElement.getAttribute("data-theme")?"#49b1f5":"#1f1f1f"};`;document.getElementById("app-refresh").style.cssText=o}}"serviceWorker"in navigator&&(navigator.serviceWorker.controller&&navigator.serviceWorker.addEventListener("controllerchange",function(){showNotification()}),window.addEventListener("load",function(){navigator.serviceWorker.register("/sw.js")}));</script><script charset="UTF-8" id="LA_COLLECT" src="https://sdk.51.la/js-sdk-pro.min.js"></script><script data-pjax src="https://sdk.51.la/perf/js-sdk-perf.min.js" crossorigin="anonymous"></script><script> LA.init({id:"JuyNJsAIUtkimZA8",ck:"JuyNJsAIUtkimZA8"})</script><script data-pjax src="/js/jquery.js?v1"></script><script data-pjax src="/js/rightmenu.js?v1"></script><div class="aplayer no-destroy" data-id="7841201322" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true"> </div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="false" data-text="富强,民主,文明,和谐,自由,平等,公正,法治,爱国,敬业,诚信,友善" data-fontsize="15px" data-random="true" async="async"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: true,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', 'UA-252619135-1', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
