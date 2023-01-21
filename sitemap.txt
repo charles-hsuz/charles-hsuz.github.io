@@ -90,12 +90,12 @@ https://www.crowhsu.top/charts/index.html
 https://www.crowhsu.top/music/index.html
 https://www.crowhsu.top/img/index.html
 https://www.crowhsu.top/
-https://www.crowhsu.top/tags/%E4%B9%90%E5%AD%A6/
-https://www.crowhsu.top/tags/%E8%B5%84%E6%BA%90/
 https://www.crowhsu.top/tags/USACO/
+https://www.crowhsu.top/tags/%E8%B5%84%E6%BA%90/
+https://www.crowhsu.top/tags/%E4%B9%90%E5%AD%A6/
 https://www.crowhsu.top/tags/tool/
-https://www.crowhsu.top/tags/STL/
 https://www.crowhsu.top/tags/%E8%BD%AC%E8%BD%BD/
+https://www.crowhsu.top/tags/STL/
 https://www.crowhsu.top/tags/%E7%AE%97%E6%B3%95/
 https://www.crowhsu.top/tags/hexo-github/
 https://www.crowhsu.top/tags/ACM-%E9%9B%86%E8%AE%AD/
