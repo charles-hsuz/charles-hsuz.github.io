@@ -3491,6 +3491,7 @@ h1.page-title + .tag-cloud-list {
 }
 #page-header:not(.not-top-img):before {
   position: absolute;
+  background-color: rgba(0,0,0,0.3);
   width: 100%;
   height: 100%;
   content: '';
@@ -5600,7 +5601,6 @@ blockquote.pullquote.right {
   --timeline-bg: #1f1f1f;
 }
 [data-theme='dark'] #web_bg:before,
-[data-theme='dark'] #footer:before,
 [data-theme='dark'] #page-header:before {
   position: absolute;
   width: 100%;
