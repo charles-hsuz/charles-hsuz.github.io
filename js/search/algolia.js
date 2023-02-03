@@ -1,5 +1,3 @@
-btf.animateIn(document.querySelector('#algolia-search .search-dialog'), 'titleScale 0.1s')
-
 window.addEventListener('load', () => {
   const openSearch = () => {
     document.querySelector('#algolia-search .ais-SearchBox-input').placeholder = GLOBAL_CONFIG.algolia.languages.input_placeholder
@@ -42,14 +40,12 @@ window.addEventListener('load', () => {
 
   const searchClickFnOnce = () => {
     document.getElementById('search-mask').addEventListener('click', closeSearch)
-    document.querySelector('#algolia-search .search-close-button').addEventListener('click', closeSearch)
+    // document.querySelector('#algolia-search .search-close-button').addEventListener('click', closeSearch)
   }
 
   const cutContent = content => {
     if (content === '') return ''
-
     const firstOccur = content.indexOf('<mark>')
-
     let start = firstOccur - 30
     let end = firstOccur + 120
     let pre = ''
@@ -163,7 +159,6 @@ window.addEventListener('load', () => {
   search.addWidgets([configure, searchBox, hits, stats, powerBy, pagination]) // add the widgets to the instantsearch instance
 
   search.start()
-
   searchClickFn()
   searchClickFnOnce()
 

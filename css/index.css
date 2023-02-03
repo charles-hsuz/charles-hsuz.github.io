@@ -7911,6 +7911,11 @@ body {
 [data-theme='dark'] #algolia-search .search-dialog.active .ais-SearchBox {
     border: 1px solid var(--hsu-font-light);
 }
+
+.search-dialog {
+    display: block !important; 
+    animation: 0.1s ease 0s 1 normal none running titleScale;
+}
 :root {
     --hsu-theme-color: #49b1f5;
     --hsu-theme-color-dark: #1f1f1f;
