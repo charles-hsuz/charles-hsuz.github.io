@@ -1,14 +1,17 @@
+btf.animateIn(document.querySelector('#algolia-search .search-dialog'), 'titleScale 0.1s')
+
 window.addEventListener('load', () => {
   const openSearch = () => {
+    document.querySelector('#algolia-search .ais-SearchBox-input').placeholder = GLOBAL_CONFIG.algolia.languages.input_placeholder
     const bodyStyle = document.body.style
     bodyStyle.width = '100%'
-    bodyStyle.overflow = 'hidden'
+    // bodyStyle.overflow = 'hidden'
+    document.querySelector('header#page-header').classList.add('fixed')
     btf.animateIn(document.getElementById('search-mask'), 'to_show 0.5s')
-    btf.animateIn(document.querySelector('#algolia-search .search-dialog'), 'titleScale 0.5s')
     setTimeout(() => { document.querySelector('#algolia-search .ais-SearchBox-input').focus() }, 100)
 
     // shortcut: ESC
-    document.addEventListener('keydown', function f (event) {
+    document.addEventListener('keydown', function f(event) {
       if (event.code === 'Escape') {
         closeSearch()
         document.removeEventListener('keydown', f)
@@ -17,15 +20,24 @@ window.addEventListener('load', () => {
   }
 
   const closeSearch = () => {
+    document.querySelector('header#page-header').classList.remove('fixed')
+    document.querySelector('#algolia-search .search-dialog').classList.remove('active')
+    document.querySelector('.ais-SearchBox input').value = ''
+    document.querySelector('#algolia-search .ais-SearchBox-input').placeholder = 'shift K'
+    btf.animateOut(document.getElementById('search-mask'), 'to_hide 0.5s')
     const bodyStyle = document.body.style
     bodyStyle.width = ''
     bodyStyle.overflow = ''
-    btf.animateOut(document.querySelector('#algolia-search .search-dialog'), 'search_close .5s')
-    btf.animateOut(document.getElementById('search-mask'), 'to_hide 0.5s')
   }
 
+
+
   const searchClickFn = () => {
-    document.querySelector('#search-button > .search').addEventListener('click', openSearch)
+    const Sbutton = document.querySelector('#algolia-search .search-dialog')
+    Sbutton.onclick = function () {
+      Sbutton.classList.add('active')
+      openSearch()
+    }
   }
 
   const searchClickFnOnce = () => {
@@ -70,7 +82,7 @@ window.addEventListener('load', () => {
     indexName: algolia.indexName,
     /* global algoliasearch */
     searchClient: algoliasearch(algolia.appId, algolia.apiKey),
-    searchFunction (helper) {
+    searchFunction(helper) {
       helper.state.query && helper.search()
     }
   })
@@ -83,14 +95,17 @@ window.addEventListener('load', () => {
     container: '#algolia-search-input',
     showReset: false,
     showSubmit: false,
-    placeholder: GLOBAL_CONFIG.algolia.languages.input_placeholder,
-    showLoadingIndicator: true
+    placeholder: 'shift K',
+    showLoadingIndicator: true,
+    cssClasses: {
+
+    }
   })
 
   const hits = instantsearch.widgets.hits({
     container: '#algolia-hits',
     templates: {
-      item (data) {
+      item(data) {
         const link = data.permalink ? data.permalink : (GLOBAL_CONFIG.root + data.path)
         const result = data._highlightResult
         const content = result.contentStripTruncate

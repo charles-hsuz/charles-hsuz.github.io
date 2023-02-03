@@ -44,6 +44,3 @@ function getFireConfirm() {
 }
 
 getFireConfirm();
-
-
-
