@@ -11,7 +11,6 @@ window.addEventListener("appinstalled", () => {
     deferredPrompt = null;
 });
 
-// 手动触发PWA安装
 function addToDesktop() {
     deferredPrompt.prompt();
 }

@@ -7912,6 +7912,8 @@ body {
     border: 1px solid var(--hsu-font-light);
 }
 
+/* upadate 0.0.1 修复pjax冲突 */
+
 .search-dialog {
     display: block !important; 
     animation: 0.1s ease 0s 1 normal none running titleScale;

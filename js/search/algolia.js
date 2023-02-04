@@ -1,5 +1,6 @@
 window.addEventListener('load', () => {
   const openSearch = () => {
+    document.querySelector('#algolia-search .search-dialog').classList.add('active')
     document.querySelector('#algolia-search .ais-SearchBox-input').placeholder = GLOBAL_CONFIG.algolia.languages.input_placeholder
     const bodyStyle = document.body.style
     bodyStyle.width = '100%'
@@ -16,7 +17,7 @@ window.addEventListener('load', () => {
       }
     })
   }
-
+  hsu.KCadd('Shift','k',openSearch)
   const closeSearch = () => {
     document.querySelector('header#page-header').classList.remove('fixed')
     document.querySelector('#algolia-search .search-dialog').classList.remove('active')
@@ -28,14 +29,10 @@ window.addEventListener('load', () => {
     bodyStyle.overflow = ''
   }
 
-
-
   const searchClickFn = () => {
-    const Sbutton = document.querySelector('#algolia-search .search-dialog')
-    Sbutton.onclick = function () {
-      Sbutton.classList.add('active')
+    document.querySelector('#algolia-search .search-dialog').onclick = function(){
       openSearch()
-    }
+    } 
   }
 
   const searchClickFnOnce = () => {
