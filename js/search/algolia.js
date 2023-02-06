@@ -1,48 +1,59 @@
 window.addEventListener('load', () => {
   const openSearch = () => {
-    document.querySelector('#algolia-search .search-dialog').classList.add('active')
+    document.getElementById('search-bg').classList.remove('hide')
     document.querySelector('#algolia-search .ais-SearchBox-input').placeholder = GLOBAL_CONFIG.algolia.languages.input_placeholder
-    const bodyStyle = document.body.style
-    bodyStyle.width = '100%'
-    // bodyStyle.overflow = 'hidden'
-    document.querySelector('header#page-header').classList.add('fixed')
-    btf.animateIn(document.getElementById('search-mask'), 'to_show 0.5s')
+    document.querySelector('#algolia-search #search-bg:not(.phone)').style.width = '600px'
+
     setTimeout(() => { document.querySelector('#algolia-search .ais-SearchBox-input').focus() }, 100)
 
     // shortcut: ESC
-    document.addEventListener('keydown', function f(event) {
+    document.addEventListener('keydown', function f (event) {
       if (event.code === 'Escape') {
         closeSearch()
         document.removeEventListener('keydown', f)
       }
     })
   }
-  hsu.KCadd('Shift','k',openSearch)
+
+  hsu.KCadd('Shift', 'K', openSearch)
+
   const closeSearch = () => {
-    document.querySelector('header#page-header').classList.remove('fixed')
-    document.querySelector('#algolia-search .search-dialog').classList.remove('active')
-    document.querySelector('.ais-SearchBox input').value = ''
-    document.querySelector('#algolia-search .ais-SearchBox-input').placeholder = 'shift K'
-    btf.animateOut(document.getElementById('search-mask'), 'to_hide 0.5s')
+    document.querySelector('#algolia-search .ais-SearchBox-input').placeholder = 'ctrl K'
+    document.querySelector('#algolia-search #search-bg:not(.phone)').style.width = ''
+    document.getElementById('search-bg').classList.add('hide')
     const bodyStyle = document.body.style
     bodyStyle.width = ''
     bodyStyle.overflow = ''
+    btf.animateOut(document.getElementById('search-mask'), 'to_hide 0.5s')
   }
 
   const searchClickFn = () => {
-    document.querySelector('#algolia-search .search-dialog').onclick = function(){
-      openSearch()
-    } 
+    document.querySelector('#algolia-search .ais-SearchBox').addEventListener('click', openSearch)
   }
 
-  const searchClickFnOnce = () => {
-    document.getElementById('search-mask').addEventListener('click', closeSearch)
-    // document.querySelector('#algolia-search .search-close-button').addEventListener('click', closeSearch)
+  const searchLocate = () => {
+    let searchBG = document.querySelector('#algolia-search #search-bg')
+    let leftWid = document.querySelector('#blog-info a').offsetWidth
+    let rightWid = document.querySelector('#nav #menus').offsetWidth
+    let extra = parseInt(window.getComputedStyle(document.getElementById('nav'), null).getPropertyValue('padding-left'))
+    let mWidth = innerWidth - leftWid - rightWid - extra*2 - 30
+    if(innerWidth > 860) {
+      searchBG.style.right = (rightWid + extra) + 'px'
+      searchBG.style.maxWidth = mWidth + 'px'
+    } else {
+      searchBG.classList.add('phone')
+    }
+  }
+
+  const searchInit = () => {
+    // document.getElementById('search-bg').classList.add('hide')
   }
 
   const cutContent = content => {
     if (content === '') return ''
+
     const firstOccur = content.indexOf('<mark>')
+
     let start = firstOccur - 30
     let end = firstOccur + 120
     let pre = ''
@@ -61,7 +72,7 @@ window.addEventListener('load', () => {
       post = '...'
     }
 
-    const matchContent = pre + content.substring(start, end) + post
+    let matchContent = pre + content.substring(start, end) + post
     return matchContent
   }
 
@@ -73,46 +84,33 @@ window.addEventListener('load', () => {
 
   const search = instantsearch({
     indexName: algolia.indexName,
-    /* global algoliasearch */
     searchClient: algoliasearch(algolia.appId, algolia.apiKey),
+    searchParameters: {
+      hitsPerPage: algolia.hits.per_page || 10
+    },
     searchFunction(helper) {
       helper.state.query && helper.search()
-    }
-  })
-
-  const configure = instantsearch.widgets.configure({
-    hitsPerPage: 5
+    },
   })
 
   const searchBox = instantsearch.widgets.searchBox({
     container: '#algolia-search-input',
     showReset: false,
     showSubmit: false,
-    placeholder: 'shift K',
-    showLoadingIndicator: true,
-    cssClasses: {
-
-    }
+    placeholder: 'ctrl K',
+    showLoadingIndicator: true
   })
 
   const hits = instantsearch.widgets.hits({
     container: '#algolia-hits',
     templates: {
-      item(data) {
+      item: function (data) {
         const link = data.permalink ? data.permalink : (GLOBAL_CONFIG.root + data.path)
-        const result = data._highlightResult
-        const content = result.contentStripTruncate
-          ? cutContent(result.contentStripTruncate.value)
-          : result.contentStrip
-            ? cutContent(result.contentStrip.value)
-            : result.content
-              ? cutContent(result.content.value)
-              : ''
-        return `
-          <a href="${link}" class="algolia-hit-item-link">
-          ${result.title.value || 'no-title'}
-          </a>
-          <p class="algolia-hit-item-content">${content}</p>`
+        return (
+          '<a href="' + link + '" class="algolia-hit-item-link">' +
+          data._highlightResult.title.value +
+          '</a>'
+        )
       },
       empty: function (data) {
         return (
@@ -138,14 +136,11 @@ window.addEventListener('load', () => {
     }
   })
 
-  const powerBy = instantsearch.widgets.poweredBy({
-    container: '#algolia-info > .algolia-poweredBy'
-  })
-
   const pagination = instantsearch.widgets.pagination({
     container: '#algolia-pagination',
-    totalPages: 5,
-    templates: {
+    scrollTo: false,
+    showFirstLast: false,
+    labels: {
       first: '<i class="fas fa-angle-double-left"></i>',
       last: '<i class="fas fa-angle-double-right"></i>',
       previous: '<i class="fas fa-angle-left"></i>',
@@ -153,11 +148,14 @@ window.addEventListener('load', () => {
     }
   })
 
-  search.addWidgets([configure, searchBox, hits, stats, powerBy, pagination]) // add the widgets to the instantsearch instance
+  search.addWidgets([searchBox,hits,stats,pagination]) // add the widgets to the instantsearch instance
 
   search.start()
+  searchLocate()
+  searchInit()
   searchClickFn()
-  searchClickFnOnce()
+
+  
 
   window.addEventListener('pjax:complete', () => {
     getComputedStyle(document.querySelector('#algolia-search .search-dialog')).display === 'block' && closeSearch()
