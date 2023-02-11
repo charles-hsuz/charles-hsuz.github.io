@@ -1,1 +1,83 @@
-let rmf={showRightMenu:function(e,t=0,n=0){let o=$("#rightMenu");o.css("top",t+"px").css("left",n+"px"),e?o.show():o.hide()},switchDarkMode:function(){"light"===("dark"===document.documentElement.getAttribute("data-theme")?"dark":"light")?(activateDarkMode(),saveToLocal.set("theme","dark",2),void 0!==GLOBAL_CONFIG.Snackbar&&btf.snackbarShow(GLOBAL_CONFIG.Snackbar.day_to_night)):(activateLightMode(),saveToLocal.set("theme","light",2),void 0!==GLOBAL_CONFIG.Snackbar&&btf.snackbarShow(GLOBAL_CONFIG.Snackbar.night_to_day)),"function"==typeof utterancesTheme&&utterancesTheme(),"object"==typeof FB&&window.loadFBComment(),window.DISQUS&&document.getElementById("disqus_thread").children.length&&setTimeout((()=>window.disqusReset()),200)},switchReadMode:function(){const e=document.body;e.classList.add("read-mode");const t=document.createElement("button");t.type="button",t.className="fas fa-sign-out-alt exit-readmode",e.appendChild(t),t.addEventListener("click",(function n(){e.classList.remove("read-mode"),t.remove(),t.removeEventListener("click",n)}))},copySelect:function(){document.execCommand("Copy",!1,null)},scrollToTop:function(){btf.scrollToDest(0,500)}};navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)||(window.oncontextmenu=function(e){$(".rightMenu-group.hide").hide(),document.getSelection().toString()&&$("#menu-text").show();let t=e.clientX+10,n=e.clientY,o=$("#rightMenu").width(),i=$("#rightMenu").height();return t+o>window.innerWidth&&(t-=o+10),n+i>window.innerHeight&&(n-=n+i-window.innerHeight),rmf.showRightMenu(!0,n,t),!1},window.addEventListener("click",(function(){rmf.showRightMenu(!1)})));
+let rmf = {};
+rmf.showRightMenu = function(isTrue, x=0, y=0){
+    let $rightMenu = $('#rightMenu');
+    $rightMenu.css('top',x+'px').css('left',y+'px');
+
+    if(isTrue){
+        $rightMenu.show();
+    }else{
+        $rightMenu.hide();
+    }
+}
+rmf.switchDarkMode = function(){
+    const nowMode = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light'
+    if (nowMode === 'light') {
+        activateDarkMode()
+        saveToLocal.set('theme', 'dark', 2)
+        GLOBAL_CONFIG.Snackbar !== undefined && btf.snackbarShow(GLOBAL_CONFIG.Snackbar.day_to_night)
+    } else {
+        activateLightMode()
+        saveToLocal.set('theme', 'light', 2)
+        GLOBAL_CONFIG.Snackbar !== undefined && btf.snackbarShow(GLOBAL_CONFIG.Snackbar.night_to_day)
+    }
+    // handle some cases
+    typeof utterancesTheme === 'function' && utterancesTheme()
+    typeof FB === 'object' && window.loadFBComment()
+    window.DISQUS && document.getElementById('disqus_thread').children.length && setTimeout(() => window.disqusReset(), 200)
+};
+rmf.switchReadMode = function(){
+    const $body = document.body
+    $body.classList.add('read-mode')
+    const newEle = document.createElement('button')
+    newEle.type = 'button'
+    newEle.className = 'fas fa-sign-out-alt exit-readmode'
+    $body.appendChild(newEle)
+
+    function clickFn () {
+        $body.classList.remove('read-mode')
+        newEle.remove()
+        newEle.removeEventListener('click', clickFn)
+    }
+
+    newEle.addEventListener('click', clickFn)
+}
+
+//复制选中文字
+rmf.copySelect = function(){
+    document.execCommand('Copy',false,null);
+    //这里可以写点东西提示一下 已复制
+}
+
+//回到顶部
+rmf.scrollToTop = function(){
+    btf.scrollToDest(0, 500);
+}
+
+// 右键菜单事件
+if(! (navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))){
+    window.oncontextmenu = function(event){
+        $('.rightMenu-group.hide').hide();
+        //如果有文字选中，则显示 文字选中相关的菜单项
+        if(document.getSelection().toString()){
+            $('#menu-text').show();
+        }
+
+        let pageX = event.clientX + 10;
+        let pageY = event.clientY;
+        let rmWidth = $('#rightMenu').width();
+        let rmHeight = $('#rightMenu').height();
+        if(pageX + rmWidth > window.innerWidth){
+            pageX -= rmWidth+10;
+        }
+        if(pageY + rmHeight > window.innerHeight){
+            pageY -= pageY + rmHeight - window.innerHeight;
+        }
+
+
+
+        rmf.showRightMenu(true, pageY, pageX);
+        return false;
+    };
+
+    window.addEventListener('click',function(){rmf.showRightMenu(false);});
+}

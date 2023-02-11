@@ -1,1 +1,170 @@
-window.addEventListener("load",(()=>{const e=()=>{document.getElementById("search-bg").classList.remove("hide"),document.querySelector("#algolia-search .ais-SearchBox-input").placeholder=GLOBAL_CONFIG.algolia.languages.input_placeholder,document.querySelector("#algolia-search #search-bg:not(.phone)").style.width="600px",setTimeout((()=>{document.querySelector("#algolia-search .ais-SearchBox-input").focus()}),100),document.addEventListener("keydown",(function e(a){"Escape"===a.code&&(t(),document.removeEventListener("keydown",e))})),document.querySelector("#body-wrap").addEventListener("click",t)};hsu.KCadd("Shift","K",e);const t=()=>{document.querySelector("#body-wrap").removeEventListener("click",t),document.querySelector("#algolia-search .ais-SearchBox-input").placeholder="Shift K",document.querySelector("#algolia-search #search-bg:not(.phone)").style.width="",document.getElementById("search-bg").classList.add("hide");const e=document.body.style;e.width="",e.overflow=""},a=()=>{document.querySelector("#algolia-search .ais-SearchBox").addEventListener("click",e)},i=GLOBAL_CONFIG.algolia;if(!(i.appId&&i.apiKey&&i.indexName))return console.error("Algolia setting is invalid!");const s=instantsearch({indexName:i.indexName,searchClient:algoliasearch(i.appId,i.apiKey),searchParameters:{hitsPerPage:i.hits.per_page||10},searchFunction(e){e.state.query&&e.search()}}),n=instantsearch.widgets.searchBox({container:"#algolia-search-input",showReset:!1,showSubmit:!1,placeholder:"Shift K",showLoadingIndicator:!0}),o=instantsearch.widgets.hits({container:"#algolia-hits",templates:{item:function(e){return'<a href="'+(e.permalink?e.permalink:GLOBAL_CONFIG.root+e.path)+'" class="algolia-hit-item-link">'+e._highlightResult.title.value+"</a>"},empty:function(e){return'<div id="algolia-hits-empty">'+GLOBAL_CONFIG.algolia.languages.hits_empty.replace(/\$\{query}/,e.query)+"</div>"}}}),l=instantsearch.widgets.stats({container:"#algolia-info > .algolia-stats",templates:{text:function(e){return`<hr>${GLOBAL_CONFIG.algolia.languages.hits_stats.replace(/\$\{hits}/,e.nbHits).replace(/\$\{time}/,e.processingTimeMS)}`}}}),r=instantsearch.widgets.pagination({container:"#algolia-pagination",scrollTo:!1,showFirstLast:!1,labels:{first:'<i class="fas fa-angle-double-left"></i>',last:'<i class="fas fa-angle-double-right"></i>',previous:'<i class="fas fa-angle-left"></i>',next:'<i class="fas fa-angle-right"></i>'}});s.addWidgets([n,o,l,r]),s.start(),(()=>{let e=document.querySelector("#algolia-search #search-bg"),t=document.querySelector("#blog-info a").offsetWidth,a=document.querySelector("#nav #menus").offsetWidth,i=parseInt(window.getComputedStyle(document.getElementById("nav"),null).getPropertyValue("padding-left")),s=innerWidth-t-a-2*i-30;innerWidth>860?(e.style.right=a+i+"px",e.style.maxWidth=s+"px"):e.classList.add("phone")})(),a(),window.addEventListener("pjax:complete",(()=>{"block"===getComputedStyle(document.querySelector("#algolia-search .search-dialog")).display&&t(),a()})),window.pjax&&s.on("render",(()=>{window.pjax.refresh(document.getElementById("algolia-hits"))}))}));
+window.addEventListener('load', () => {
+  const openSearch = () => {
+    document.getElementById('search-bg').classList.remove('hide')
+    document.querySelector('#algolia-search .ais-SearchBox-input').placeholder = GLOBAL_CONFIG.algolia.languages.input_placeholder
+    document.querySelector('#algolia-search #search-bg:not(.phone)').style.width = '600px'
+
+    setTimeout(() => { document.querySelector('#algolia-search .ais-SearchBox-input').focus() }, 100)
+
+    // shortcut: ESC
+    document.addEventListener('keydown', function f (event) {
+      if (event.code === 'Escape') {
+        closeSearch()
+        document.removeEventListener('keydown', f)
+      }
+    })
+    
+    document.querySelector('#body-wrap').addEventListener('click', closeSearch)
+  }
+
+  hsu.KCadd('Shift', 'K', openSearch)
+
+  const closeSearch = () => {
+    document.querySelector('#body-wrap').removeEventListener('click', closeSearch)
+    document.querySelector('#algolia-search .ais-SearchBox-input').placeholder = 'Shift K'
+    document.querySelector('#algolia-search #search-bg:not(.phone)').style.width = ''
+    document.getElementById('search-bg').classList.add('hide')
+    const bodyStyle = document.body.style
+    bodyStyle.width = ''
+    bodyStyle.overflow = ''
+  }
+
+  const searchClickFn = () => {
+    document.querySelector('#algolia-search .ais-SearchBox').addEventListener('click', openSearch)
+  }
+
+  const searchLocate = () => {
+    let searchBG = document.querySelector('#algolia-search #search-bg')
+    let leftWid = document.querySelector('#blog-info a').offsetWidth
+    let rightWid = document.querySelector('#nav #menus').offsetWidth
+    let extra = parseInt(window.getComputedStyle(document.getElementById('nav'), null).getPropertyValue('padding-left'))
+    let mWidth = innerWidth - leftWid - rightWid - extra*2 - 30
+    if(innerWidth > 860) {
+      searchBG.style.right = (rightWid + extra) + 'px'
+      searchBG.style.maxWidth = mWidth + 'px'
+    } else {
+      searchBG.classList.add('phone')
+    }
+  }
+
+  const searchInit = () => {
+    // document.getElementById('search-bg').classList.add('hide')
+  }
+
+  const cutContent = content => {
+    if (content === '') return ''
+
+    const firstOccur = content.indexOf('<mark>')
+
+    let start = firstOccur - 30
+    let end = firstOccur + 120
+    let pre = ''
+    let post = ''
+
+    if (start <= 0) {
+      start = 0
+      end = 140
+    } else {
+      pre = '...'
+    }
+
+    if (end > content.length) {
+      end = content.length
+    } else {
+      post = '...'
+    }
+
+    let matchContent = pre + content.substring(start, end) + post
+    return matchContent
+  }
+
+  const algolia = GLOBAL_CONFIG.algolia
+  const isAlgoliaValid = algolia.appId && algolia.apiKey && algolia.indexName
+  if (!isAlgoliaValid) {
+    return console.error('Algolia setting is invalid!')
+  }
+
+  const search = instantsearch({
+    indexName: algolia.indexName,
+    searchClient: algoliasearch(algolia.appId, algolia.apiKey),
+    searchParameters: {
+      hitsPerPage: algolia.hits.per_page || 10
+    },
+    searchFunction(helper) {
+      helper.state.query && helper.search()
+    },
+  })
+
+  const searchBox = instantsearch.widgets.searchBox({
+    container: '#algolia-search-input',
+    showReset: false,
+    showSubmit: false,
+    placeholder: 'Shift K',
+    showLoadingIndicator: true
+  })
+
+  const hits = instantsearch.widgets.hits({
+    container: '#algolia-hits',
+    templates: {
+      item: function (data) {
+        const link = data.permalink ? data.permalink : (GLOBAL_CONFIG.root + data.path)
+        return (
+          '<a href="' + link + '" class="algolia-hit-item-link">' +
+          data._highlightResult.title.value +
+          '</a>'
+        )
+      },
+      empty: function (data) {
+        return (
+          '<div id="algolia-hits-empty">' +
+          GLOBAL_CONFIG.algolia.languages.hits_empty.replace(/\$\{query}/, data.query) +
+          '</div>'
+        )
+      }
+    }
+  })
+
+  const stats = instantsearch.widgets.stats({
+    container: '#algolia-info > .algolia-stats',
+    templates: {
+      text: function (data) {
+        const stats = GLOBAL_CONFIG.algolia.languages.hits_stats
+          .replace(/\$\{hits}/, data.nbHits)
+          .replace(/\$\{time}/, data.processingTimeMS)
+        return (
+          `<hr>${stats}`
+        )
+      }
+    }
+  })
+
+  const pagination = instantsearch.widgets.pagination({
+    container: '#algolia-pagination',
+    scrollTo: false,
+    showFirstLast: false,
+    labels: {
+      first: '<i class="fas fa-angle-double-left"></i>',
+      last: '<i class="fas fa-angle-double-right"></i>',
+      previous: '<i class="fas fa-angle-left"></i>',
+      next: '<i class="fas fa-angle-right"></i>'
+    }
+  })
+
+  search.addWidgets([searchBox,hits,stats,pagination]) // add the widgets to the instantsearch instance
+
+  search.start()
+  searchLocate()
+  searchInit()
+  searchClickFn()
+
+  
+
+  window.addEventListener('pjax:complete', () => {
+    getComputedStyle(document.querySelector('#algolia-search .search-dialog')).display === 'block' && closeSearch()
+    searchClickFn()
+  })
+
+  window.pjax && search.on('render', () => {
+    window.pjax.refresh(document.getElementById('algolia-hits'))
+  })
+})

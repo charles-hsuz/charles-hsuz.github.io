@@ -1,1 +1,11 @@
-const directoryPath="/js/custom/",files=["fire.js","ascii.js","rightmenu.js","ex-search.js","hsu.js","installPWA.js","music.js"];files.forEach((function(s){if(s.endsWith(".js")){const t=document.createElement("script");t.setAttribute("data-pjax",""),t.setAttribute("async",""),t.src="/js/custom/"+s,document.head.appendChild(t)}}));
+const directoryPath = '/js/custom/';
+const files = ['fire.js', 'ascii.js', 'ex-search.js', 'installPWA.js', 'music.js'];
+files.forEach(function (file) {
+  if (file.endsWith('.js')) {
+    const script = document.createElement('script');
+    script.setAttribute('data-pjax', '')
+    script.setAttribute('async', '')
+    script.src = directoryPath + file;
+    document.head.appendChild(script);
+  }
+});
